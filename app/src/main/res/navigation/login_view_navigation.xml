@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/LoginViewFragment">
+
+    <fragment
+        android:id="@+id/LoginViewFragment"
+        android:name="com.adrena.basearchitect.features.flows.login.view.LoginViewFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/login_view_fragment">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/RegisterViewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RegisterViewFragment"
+        android:name="com.adrena.basearchitect.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+    </fragment>
+
+</navigation>
