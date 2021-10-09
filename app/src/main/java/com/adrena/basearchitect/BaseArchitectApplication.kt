@@ -4,7 +4,6 @@ import android.app.Application
 import com.adrena.basearchitect.core.internal.networkModule
 import com.adrena.basearchitect.core.preferences.preferencesModule
 import com.adrena.basearchitect.features.flows.login.module.loginModule
-import com.adrena.basearchitect.test.module.logoutModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
@@ -21,8 +20,7 @@ class BaseArchitectApplication : Application() {
                 listOf(
                     preferencesModule,
                     networkModule,
-                    loginModule,
-                    logoutModule
+                    loginModule
                 )
             )
         }
