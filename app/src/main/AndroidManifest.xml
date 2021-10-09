@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseArchitect">
         <activity
-            android:name=".features.flows.login.view.LoginActivity"
+            android:name=".test.view.LogoutViewActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.BaseArchitect.NoActionBar">
             <intent-filter>
