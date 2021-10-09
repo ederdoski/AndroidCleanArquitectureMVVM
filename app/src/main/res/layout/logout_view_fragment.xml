@@ -8,21 +8,18 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewLogout"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_alignParentEnd="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Insert content here" />
-
-        </RelativeLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="10"
+            tools:listitem="@layout/logout_view_cell" />
 
         <include
             android:id="@+id/not_network"

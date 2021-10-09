@@ -19,6 +19,10 @@
               <option name="id" value="1" />
               <option name="name" value="NewDatasource" />
             </Category>
+            <Category>
+              <option name="id" value="2" />
+              <option name="name" value="NewAdapterAndViewCell" />
+            </Category>
           </list>
         </option>
         <option name="screenElements">
@@ -124,6 +128,27 @@
               <option name="name" value="EntityResponse" />
               <option name="subdirectory" value="entity" />
               <option name="template" value="&#10;package %packageName%.entity&#10;&#10;import android.os.Parcelable&#10;import com.google.gson.annotations.SerializedName&#10;import kotlinx.android.parcel.Parcelize&#10;&#10;@Parcelize&#10;class %screenName%%screenElement% (&#10;@SerializedName(&quot;example_field&quot;)  val exampleField : String = &quot;&quot;&#10;): Parcelable&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" />
+            </ScreenElement>
+            <ScreenElement>
+              <option name="categoryId" value="2" />
+              <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+              <option name="name" value="ViewHolder" />
+              <option name="subdirectory" value="cell" />
+              <option name="template" value="package %packageName%.cell&#10;&#10;import com.adrena.basearchitect.core.base.BaseViewHolder&#10;import com.adrena.basearchitect.core.base.IOnItemClickViewHolder&#10;import com.adrena.basearchitect.databinding.%screenName%ViewCellBinding&#10;&#10;class %screenName%%screenElement%(&#10;    private val binding: %screenName%ViewCellBinding,&#10;    onItemClickListener: IOnItemClickViewHolder&#10;) : BaseViewHolder&lt;String&gt;(binding, onItemClickListener) {&#10;&#10;    override fun bindingDataInHolder(data: String) {&#10;        super.bindingDataInHolder(data)&#10;    }&#10;}" />
+            </ScreenElement>
+            <ScreenElement>
+              <option name="categoryId" value="2" />
+              <option name="fileNameTemplate" value="%screenName%%screenElement%" />
+              <option name="name" value="Adapter" />
+              <option name="subdirectory" value="cell" />
+              <option name="template" value="package %packageName%.cell&#10;&#10;import android.view.LayoutInflater&#10;import android.view.ViewGroup&#10;import com.adrena.basearchitect.core.base.BaseAdapter&#10;import com.adrena.basearchitect.core.base.BaseViewHolder&#10;import com.adrena.basearchitect.core.base.IOnItemClickViewHolder&#10;import com.adrena.basearchitect.databinding.%screenName%ViewCellBinding&#10;&#10;class %screenName%Adapter(&#10;    dataList: List&lt;String&gt; = mutableListOf(),&#10;    private val onItemClickListener: IOnItemClickViewHolder&#10;) : BaseAdapter&lt;String&gt;(dataList, onItemClickListener) {&#10;&#10;    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder&lt;String&gt; {&#10;        return % screenName % ViewHolder(&#10;            % screenName % ViewCellBinding . inflate (&#10;                LayoutInflater.from(parent.context), parent, false&#10;            ), onItemClickListener&#10;        )&#10;    }&#10;}" />
+            </ScreenElement>
+            <ScreenElement>
+              <option name="categoryId" value="2" />
+              <option name="fileNameTemplate" value="%screenNameSnakeCase%_view_cell" />
+              <option name="fileType" value="Layout XML" />
+              <option name="name" value="ItemLayout" />
+              <option name="template" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;layout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&#10;    xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;&#10;    &lt;androidx.cardview.widget.CardView&#10;        android:id=&quot;@+id/%screenNameSnakeCase%_parent&quot;&#10;        android:layout_width=&quot;match_parent&quot;&#10;        android:layout_height=&quot;wrap_content&quot;&#10;        app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;        app:layout_constraintTop_toTopOf=&quot;parent&quot;&#10;        android:elevation=&quot;0dp&quot;&#10;        app:cardElevation=&quot;0dp&quot;&gt;&#10;    &#10;        &lt;androidx.constraintlayout.widget.ConstraintLayout&#10;            android:background=&quot;@color/gray&quot;&#10;            android:layout_width=&quot;match_parent&quot;&#10;            android:layout_height=&quot;@dimen/_100sdp&quot;&gt;&#10;    &#10;            &lt;TextView&#10;                android:layout_width=&quot;wrap_content&quot;&#10;                android:layout_height=&quot;wrap_content&quot;&#10;                android:ellipsize=&quot;end&quot;&#10;                android:maxLines=&quot;2&quot;&#10;                app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;                app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;                app:layout_constraintStart_toStartOf=&quot;parent&quot;&#10;                app:layout_constraintTop_toTopOf=&quot;parent&quot;&#10;                tools:text=&quot;Insert your view here&quot; /&gt;&#10;    &#10;        &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;&#10;    &#10;    &lt;/androidx.cardview.widget.CardView&gt;&#10;&lt;/layout&gt;" />
             </ScreenElement>
           </list>
         </option>
