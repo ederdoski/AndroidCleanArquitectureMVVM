@@ -1,12 +1,10 @@
-package com.adrena.basearchitect.features.flows.login.viewmodel
+package com.adrena.basearchitect.features.flows.users.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrena.basearchitect.core.extensions.Event
-import com.adrena.basearchitect.features.flows.login.datasource.entity.LoginEntityResponse
 
-class LoginVMDelegate {
-
+class UsersVMDelegate {
     //region Generic actions
     //region Show progress view
     private val _showProgress = MutableLiveData<Event<Unit>>()
@@ -50,13 +48,12 @@ class LoginVMDelegate {
         _hideUnknownError.value = Event(Unit)
     }
     //endregion
-    //region onLoginUpdate
-    //region Show onLoginUpdate
-    private val _onLoginUpdate = MutableLiveData<Event<LoginEntityResponse>>()
-    val onLoginUpdate: LiveData<Event<LoginEntityResponse>> get() = _onLoginUpdate
-    fun onLoginPostValue(loginEntityResponse: LoginEntityResponse) {
-        _onLoginUpdate.value = Event(loginEntityResponse)
+    //region onSetUsers
+    //region Show onSetUsers
+    private val _onSetUsers = MutableLiveData<Event<Unit>>()
+    val onSetUsers: LiveData<Event<Unit>> get() = _onSetUsers
+    fun onPostSetUsersValue() {
+        _onSetUsers.value = Event(Unit)
     }
     //endregion
-
 }

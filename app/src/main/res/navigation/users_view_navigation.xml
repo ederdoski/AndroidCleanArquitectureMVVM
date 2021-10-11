@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/users_navigation"
+    app:startDestination="@id/users_entry">
+
+    <fragment
+        android:id="@+id/users_entry"
+        android:name="com.adrena.basearchitect.features.flows.users.view.UsersViewFragment"
+        android:label="UsersEntry"
+        tools:layout="@layout/users_view_fragment">
+    </fragment>
+
+</navigation>
